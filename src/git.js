@@ -19,24 +19,31 @@ function activate(context) {
     let disposable = vscode.commands.registerCommand('extension.gitCheckout', function () {
         // The code you place here will be executed every time your command is executed
 
-        console.log('command called');
         const activeEditor = vscode.window.activeTextEditor;
 
         if (!activeEditor) {
             vscode.window.showErrorMessage("no active editor found");
+            return 0;
         }
 
-        const fileName = activeEditor.fileName;
+        const fileName = activeEditor.document.fileName;
 
         if (!fileName) {
             vscode.window.showErrorMessage("no fileName found");
             console.log(fileName);
             return 0;
         }
-        debugger
+        // debugger
 
-        // Display a message box to the user
-        vscode.window.showInformationMessage('Hello World! ' + fileName);
+        const dirname = path.dirname(fileName);
+
+        cp.exec(
+            `git checkout ${fileName}`,
+            { cwd: dirname },
+            () => {
+                console.log(arguments);
+            }
+        );
     });
 
     context.subscriptions.push(disposable);
