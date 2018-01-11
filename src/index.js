@@ -2,8 +2,8 @@
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
 
-const cp = require('child_process');
-const path = require('path');
+const { gitCheckout } = require('./commands/git');
+const { prettyJSON } = require('./commands/json');
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -16,37 +16,10 @@ function activate(context) {
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with  registerCommand
     // The commandId parameter must match the command field in package.json
-    let disposable = vscode.commands.registerCommand('extension.gitCheckout', function () {
-        // The code you place here will be executed every time your command is executed
 
-        const activeEditor = vscode.window.activeTextEditor;
-
-        if (!activeEditor) {
-            vscode.window.showErrorMessage("no active editor found");
-            return 0;
-        }
-
-        const fileName = activeEditor.document.fileName;
-
-        if (!fileName) {
-            vscode.window.showErrorMessage("no fileName found");
-            console.log(fileName);
-            return 0;
-        }
-        // debugger
-
-        const dirname = path.dirname(fileName);
-
-        cp.exec(
-            `git checkout ${fileName}`,
-            { cwd: dirname },
-            () => {
-                console.log(arguments);
-            }
-        );
-    });
-
-    context.subscriptions.push(disposable);
+    context.subscriptions.push(vscode.commands.registerCommand('raiman264.gitCheckout', gitCheckout));
+    // context.subscriptions.push(vscode.commands.registerCommand('raiman264.prettyJSON', prettyJSON));
+    context.subscriptions.push(vscode.commands.registerTextEditorCommand('raiman264.prettyJSON', prettyJSON));
 }
 exports.activate = activate;
 
