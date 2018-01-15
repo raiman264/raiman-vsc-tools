@@ -11,6 +11,15 @@ This is are the tools that I use for my day to day development. It is mostly js 
 
 <!-- \!\[feature X\]\(images/feature-x.png\) -->
 
+## Install
+### From repo
+Go to the VSCode extensions folder
+* Windows `%USERPROFILE%\.vscode\extensions`
+* Mac `~/.vscode/extensions`
+* Linux `~/.vscode/extensions`
+Clone the repository there
+`git clone https://github.com/raiman264/raiman-vsc-tools.git`
+
 ## Release Notes
 
 Users appreciate release notes as you update your extension.
