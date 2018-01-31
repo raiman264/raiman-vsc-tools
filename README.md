@@ -7,6 +7,7 @@ This is are the tools that I use for my day to day development. It is mostly js 
 ### Commands
 * Git Checkout current file
   > Easy way to discard the all the changes of the current file.
+  > alias of discard command
 * Prettify JSON string
 
 <!-- \!\[feature X\]\(images/feature-x.png\) -->

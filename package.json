@@ -11,15 +11,15 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:raiman264.gitCheckout",
+        "onCommand:raiman264.fileCheckout",
         "onCommand:raiman264.prettyJSON"
     ],
     "main": "./src/index",
     "contributes": {
         "commands": [
             {
-                "command": "raiman264.gitCheckout",
-                "title": "Git Checkout current file"
+                "command": "raiman264.fileCheckout",
+                "title": "Checkout current file (discard changes)"
             },
             {
                 "command": "raiman264.prettyJSON",

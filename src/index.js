@@ -2,7 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
 
-const { gitCheckout } = require('./commands/git');
+const { fileCheckout } = require('./commands/alias');
 const { prettyJSON } = require('./commands/json');
 
 // this method is called when your extension is activated
@@ -17,7 +17,7 @@ function activate(context) {
     // Now provide the implementation of the command with  registerCommand
     // The commandId parameter must match the command field in package.json
 
-    context.subscriptions.push(vscode.commands.registerCommand('raiman264.gitCheckout', gitCheckout));
+    context.subscriptions.push(vscode.commands.registerCommand('raiman264.fileCheckout', fileCheckout));
     // context.subscriptions.push(vscode.commands.registerCommand('raiman264.prettyJSON', prettyJSON));
     context.subscriptions.push(vscode.commands.registerTextEditorCommand('raiman264.prettyJSON', prettyJSON));
 }
