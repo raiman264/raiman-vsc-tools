@@ -4,6 +4,7 @@ const vscode = require('vscode');
 
 const { fileCheckout } = require('./commands/alias');
 const { prettyJSON } = require('./commands/json');
+const { prettyCurl } = require('./commands/curl');
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -18,8 +19,8 @@ function activate(context) {
     // The commandId parameter must match the command field in package.json
 
     context.subscriptions.push(vscode.commands.registerCommand('raiman264.fileCheckout', fileCheckout));
-    // context.subscriptions.push(vscode.commands.registerCommand('raiman264.prettyJSON', prettyJSON));
     context.subscriptions.push(vscode.commands.registerTextEditorCommand('raiman264.prettyJSON', prettyJSON));
+    context.subscriptions.push(vscode.commands.registerTextEditorCommand('raiman264.prettyCurl', prettyCurl));
 }
 exports.activate = activate;
 

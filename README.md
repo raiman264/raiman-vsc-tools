@@ -9,6 +9,7 @@ This is are the tools that I use for my day to day development. It is mostly js 
   > Easy way to discard the all the changes of the current file.
   > alias of discard command
 * Prettify JSON string
+* Prettify Curl command
 
 <!-- \!\[feature X\]\(images/feature-x.png\) -->
 
@@ -23,8 +24,8 @@ Clone the repository there
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
+### 0.0.3
+Prettify Curl
 ### 0.0.2
 Prettify JSON
 

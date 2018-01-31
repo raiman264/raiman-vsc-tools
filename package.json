@@ -12,7 +12,8 @@
     ],
     "activationEvents": [
         "onCommand:raiman264.fileCheckout",
-        "onCommand:raiman264.prettyJSON"
+        "onCommand:raiman264.prettyJSON",
+        "onCommand:raiman264.prettyCurl"
     ],
     "main": "./src/index",
     "contributes": {
@@ -24,6 +25,10 @@
             {
                 "command": "raiman264.prettyJSON",
                 "title": "Prettify JSON string"
+            },
+            {
+                "command": "raiman264.prettyCurl",
+                "title": "Prettify Curl string"
             }
         ]
     },
